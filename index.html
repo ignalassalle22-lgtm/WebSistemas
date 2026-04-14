@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f1e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>NexoPyme — Software de Gestión para PyMEs</title>
   <meta name="description" content="NexoPyme centraliza stock, ventas, compras, pagos, cajas y puntos de venta en un único sistema. Diseñado para PyMEs argentinas." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -381,24 +384,26 @@
         </div>
       </div>
 
-      <form class="contact__form" id="contactForm" onsubmit="submitForm(event)">
-        <div class="form__group">
-          <label for="nombre">Nombre y apellido</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Juan García" required />
-        </div>
-        <div class="form__group">
-          <label for="empresa">Empresa</label>
-          <input type="text" id="empresa" name="empresa" placeholder="Mi PyME S.R.L." required />
+      <form class="contact__form" id="contactForm" onsubmit="submitForm(event)" novalidate>
+        <div class="form__row">
+          <div class="form__group">
+            <label for="nombre">Nombre y apellido *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Juan García" required autocomplete="name" />
+          </div>
+          <div class="form__group">
+            <label for="empresa">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Mi PyME S.R.L." required autocomplete="organization" />
+          </div>
         </div>
         <div class="form__group">
           <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="+54 11 1234-5678" />
+          <input type="tel" id="telefono" name="telefono" placeholder="+54 11 1234-5678" autocomplete="tel" />
         </div>
         <div class="form__group">
-          <label for="mensaje">Mensaje</label>
+          <label for="mensaje">Mensaje *</label>
           <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos en qué podemos ayudarte..." required></textarea>
         </div>
-        <button type="submit" class="btn btn--solid btn--lg form__submit">Enviar consulta</button>
+        <button type="submit" class="btn btn--solid btn--lg form__submit" id="formBtn">Enviar consulta</button>
         <p class="form__note" id="formNote"></p>
       </form>
     </div>
@@ -436,17 +441,47 @@
       menu.classList.toggle('open');
     }
 
-    function submitForm(e) {
+    async function submitForm(e) {
       e.preventDefault();
-      const nombre   = document.getElementById('nombre').value;
-      const empresa  = document.getElementById('empresa').value;
-      const telefono = document.getElementById('telefono').value;
-      const mensaje  = document.getElementById('mensaje').value;
-      const body = `Nombre: ${nombre}%0AEmpresa: ${empresa}%0ATelefono: ${telefono}%0A%0AMensaje:%0A${mensaje}`;
-      window.location.href = `mailto:nexo.pyme.admin@gmail.com?subject=Consulta NexoPyme - ${encodeURIComponent(empresa)}&body=${body}`;
+      const btn  = document.getElementById('formBtn');
       const note = document.getElementById('formNote');
-      note.textContent = 'Se abrirá tu cliente de correo para enviar la consulta.';
-      note.style.color = '#4ade80';
+      const nombre   = document.getElementById('nombre').value.trim();
+      const empresa  = document.getElementById('empresa').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const mensaje  = document.getElementById('mensaje').value.trim();
+
+      if (!nombre || !empresa || !mensaje) {
+        note.textContent = 'Por favor completá los campos obligatorios (*)';
+        note.className = 'form__note form__note--error';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+      note.textContent = '';
+      note.className = 'form__note';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre, empresa, telefono, mensaje }),
+        });
+        const data = await res.json();
+        if (res.ok && data.ok) {
+          note.textContent = '¡Consulta enviada! Nos ponemos en contacto a la brevedad.';
+          note.className = 'form__note form__note--ok';
+          document.getElementById('contactForm').reset();
+        } else {
+          throw new Error(data.error || 'Error desconocido');
+        }
+      } catch (err) {
+        note.textContent = 'No se pudo enviar. Escribinos directamente a nexo.pyme.admin@gmail.com';
+        note.className = 'form__note form__note--error';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Enviar consulta';
+      }
     }
 
     // Smooth scroll for anchor links
