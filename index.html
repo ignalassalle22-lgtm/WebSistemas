@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexoPyme — Software de Gestión para PyMEs</title>
+  <meta name="description" content="NexoPyme centraliza stock, ventas, compras, pagos, cajas y puntos de venta en un único sistema. Diseñado para PyMEs argentinas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">Nexo<span>Pyme</span></a>
+      <nav class="nav__links">
+        <a href="#modulos">Módulos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://nexopyme.vercel.app/" target="_blank" class="btn btn--outline">Acceder</a>
+      </nav>
+      <button class="nav__burger" aria-label="Menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#modulos" onclick="toggleMenu()">Módulos</a>
+      <a href="#beneficios" onclick="toggleMenu()">Beneficios</a>
+      <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+      <a href="https://nexopyme.vercel.app/" target="_blank" class="btn btn--solid">Acceder</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__badge">Software de gestión para PyMEs</div>
+      <h1 class="hero__title">Todo tu negocio.<br /><span>Un solo sistema.</span></h1>
+      <p class="hero__sub">
+        NexoPyme unifica stock, ventas, compras, pagos, cajas y punto de venta en una plataforma ágil y en tiempo real. Sin planillas, sin información dispersa, sin pérdida de tiempo.
+      </p>
+      <div class="hero__actions">
+        <a href="https://nexopyme.vercel.app/" target="_blank" class="btn btn--solid btn--lg">Probar gratis</a>
+        <a href="#modulos" class="btn btn--ghost btn--lg">Ver módulos</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <strong>9</strong>
+          <span>Módulos integrados</span>
+        </div>
+        <div class="stat">
+          <strong>100%</strong>
+          <span>En la nube</span>
+        </div>
+        <div class="stat">
+          <strong>Multi-</strong>
+          <span>Moneda ARS / USD</span>
+        </div>
+        <div class="stat">
+          <strong>ARCA</strong>
+          <span>Integración AFIP</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__glow"></div>
+  </section>
+
+  <!-- PROBLEMA / SOLUCIÓN -->
+  <section class="problem">
+    <div class="container">
+      <div class="section-tag">El problema</div>
+      <h2 class="section-title">La información fragmentada le cuesta dinero a tu empresa</h2>
+      <div class="problem__grid">
+        <div class="problem__card problem__card--bad">
+          <div class="problem__icon">✗</div>
+          <p>Planillas de Excel desactualizadas y propensas a errores</p>
+        </div>
+        <div class="problem__card problem__card--bad">
+          <div class="problem__icon">✗</div>
+          <p>Stock sin actualizar en tiempo real tras cada venta o compra</p>
+        </div>
+        <div class="problem__card problem__card--bad">
+          <div class="problem__icon">✗</div>
+          <p>Sistemas separados que no se comunican entre sí</p>
+        </div>
+        <div class="problem__card problem__card--bad">
+          <div class="problem__icon">✗</div>
+          <p>Horas perdidas conciliando datos de distintas fuentes</p>
+        </div>
+        <div class="problem__card problem__card--bad">
+          <div class="problem__icon">✗</div>
+          <p>Cobranzas olvidadas y cuentas corrientes descontroladas</p>
+        </div>
+        <div class="problem__card problem__card--bad">
+          <div class="problem__icon">✗</div>
+          <p>Decisiones tomadas sobre información desactualizada</p>
+        </div>
+      </div>
+      <div class="solution__arrow">↓</div>
+      <div class="solution__card">
+        <div class="solution__icon">✓</div>
+        <div>
+          <h3>NexoPyme resuelve todo esto desde un único lugar</h3>
+          <p>Cada módulo está conectado: una venta descuenta stock, genera una cuenta corriente, actualiza la caja y queda disponible en los reportes al instante. Sin duplicar datos, sin trabajo manual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULOS -->
+  <section class="modules" id="modulos">
+    <div class="container">
+      <div class="section-tag">Plataforma</div>
+      <h2 class="section-title">Módulos diseñados para el día a día de tu PyME</h2>
+      <p class="section-sub">Cada área de tu negocio cubierta, todas integradas entre sí.</p>
+
+      <div class="modules__grid">
+
+        <div class="module-card module-card--featured">
+          <div class="module-card__icon">🏠</div>
+          <h3>Hub Central</h3>
+          <p>Panel de control con métricas clave, cobranzas y pagos pendientes, stock crítico y tipo de cambio en tiempo real. El pulso de tu empresa de un vistazo.</p>
+          <ul>
+            <li>KPIs del negocio en tiempo real</li>
+            <li>Alertas de stock mínimo</li>
+            <li>Cobranzas y pagos próximos a vencer</li>
+            <li>Cotización ARS / USD actualizada</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card__icon">🛒</div>
+          <h3>Ventas</h3>
+          <p>Facturación completa con presupuestos, facturas y remitos. Multi-moneda, listas de precios por cliente, IVA configurable y exportación a PDF.</p>
+          <ul>
+            <li>Presupuestos y facturas en segundos</li>
+            <li>Precios por lista (minorista / mayorista / distribuidor)</li>
+            <li>Facturación ARS y USD con conversión automática</li>
+            <li>Integración ARCA (AFIP) para emisión electrónica</li>
+            <li>Recordatorios de cobranza por Gmail / Outlook</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card__icon">📦</div>
+          <h3>Compras</h3>
+          <p>Gestión de órdenes de compra y proveedores con lectura inteligente de facturas en PDF mediante IA.</p>
+          <ul>
+            <li>Órdenes de compra por proveedor</li>
+            <li>Lectura automática de facturas PDF con IA</li>
+            <li>Seguimiento de pagos a proveedores</li>
+            <li>Impacto automático en stock al recibir mercadería</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card__icon">📊</div>
+          <h3>Inventario</h3>
+          <p>Control de stock en tiempo real con alertas de mínimos y carga masiva desde Excel. Siempre sabés cuánto tenés y cuándo reponer.</p>
+          <ul>
+            <li>Stock en tiempo real con SKU</li>
+            <li>Umbrales de stock mínimo con alertas</li>
+            <li>Importación masiva desde Excel</li>
+            <li>Historial de movimientos por producto</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card__icon">🖥️</div>
+          <h3>Punto de Venta (POS)</h3>
+          <p>Sistema de caja completo para operaciones presenciales con múltiples medios de pago, descuentos, apertura/cierre de caja y roles diferenciados.</p>
+          <ul>
+            <li>Ventas rápidas con escáner de código de barras</li>
+            <li>Múltiples medios de pago en una misma transacción</li>
+            <li>Descuentos y promociones en el momento</li>
+            <li>Roles cajero / jefe con permisos distintos</li>
+            <li>Ticket detallado y facturación desde el POS</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card__icon">💼</div>
+          <h3>Comercial</h3>
+          <p>Agenda integrada con Google Calendar, notas comerciales y asistente de IA para gestión de clientes y oportunidades.</p>
+          <ul>
+            <li>Agenda sincronizada con Google Calendar</li>
+            <li>Notas y seguimiento de clientes</li>
+            <li>Asistente de IA para análisis comercial</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card__icon">🚚</div>
+          <h3>Logística</h3>
+          <p>Optimización de rutas de entrega con IA y visualización en Google Maps. Menos combustible, más entregas por día.</p>
+          <ul>
+            <li>Optimización de rutas con IA</li>
+            <li>Visualización en Google Maps</li>
+            <li>Planificación de entregas por zona</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card__icon">👥</div>
+          <h3>RRHH</h3>
+          <p>Gestión completa del personal: liquidación de sueldos, vacaciones conforme LCT Art. 150, asistencias y recibos de sueldo digitales.</p>
+          <ul>
+            <li>Altas y bajas de empleados</li>
+            <li>Liquidación de haberes</li>
+            <li>Control de asistencias y ausencias</li>
+            <li>Vacaciones según Ley de Contrato de Trabajo</li>
+            <li>Recibos de sueldo en PDF</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-card__icon">📈</div>
+          <h3>Reportes</h3>
+          <p>Informes operativos, tácticos y estratégicos para tomar decisiones basadas en datos reales. Exportables en PDF y Excel.</p>
+          <ul>
+            <li>Reportes operativos del día a día</li>
+            <li>Análisis táctico mensual y trimestral</li>
+            <li>Visión estratégica del negocio</li>
+            <li>Exportación a PDF y Excel con un clic</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="benefits" id="beneficios">
+    <div class="container">
+      <div class="section-tag">Por qué NexoPyme</div>
+      <h2 class="section-title">Menos tiempo en administración, más tiempo en tu negocio</h2>
+
+      <div class="benefits__grid">
+        <div class="benefit">
+          <div class="benefit__icon">🔗</div>
+          <h3>Todo conectado</h3>
+          <p>Una venta actualiza el stock, la caja, las cuentas corrientes y los reportes en el mismo instante. Sin pasos manuales, sin información desincronizada.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit__icon">⚡</div>
+          <h3>Velocidad operativa</h3>
+          <p>Interfaces pensadas para la operación real: POS ágil para caja, carga rápida en ventas y compras, y dashboards que muestran lo que importa sin ruido.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit__icon">☁️</div>
+          <h3>100% en la nube</h3>
+          <p>Accedé desde cualquier dispositivo con internet. Sin instalaciones, sin servidores propios, sin mantenimiento. Tus datos siempre disponibles y seguros.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit__icon">💰</div>
+          <h3>Ahorro real de costos</h3>
+          <p>Reemplazá múltiples sistemas y suscripciones por uno solo. Reducí errores que cuestan dinero y recuperá horas de trabajo que hoy se pierden en tareas manuales.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit__icon">🇦🇷</div>
+          <h3>Diseñado para Argentina</h3>
+          <p>Multi-moneda ARS/USD, integración con ARCA (AFIP) para facturación electrónica, liquidación de sueldos según LCT y terminología local en todo el sistema.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit__icon">🤖</div>
+          <h3>Inteligencia artificial integrada</h3>
+          <p>IA para leer facturas de proveedores, optimizar rutas de entrega y asistir al equipo comercial. Tecnología de punta al servicio de tu operación diaria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLUJO -->
+  <section class="flow">
+    <div class="container">
+      <div class="section-tag">Flujo de información</div>
+      <h2 class="section-title">Así fluye la información en tu empresa</h2>
+      <p class="section-sub">Cada acción en un módulo alimenta automáticamente al resto. Cero duplicación, cero inconsistencias.</p>
+      <div class="flow__diagram">
+        <div class="flow__node flow__node--center">
+          <div class="flow__circle">Hub</div>
+        </div>
+        <div class="flow__spokes">
+          <div class="flow__spoke">
+            <div class="flow__box">Ventas</div>
+            <div class="flow__line"></div>
+          </div>
+          <div class="flow__spoke">
+            <div class="flow__box">Compras</div>
+            <div class="flow__line"></div>
+          </div>
+          <div class="flow__spoke">
+            <div class="flow__box">Inventario</div>
+            <div class="flow__line"></div>
+          </div>
+          <div class="flow__spoke">
+            <div class="flow__box">POS</div>
+            <div class="flow__line"></div>
+          </div>
+          <div class="flow__spoke">
+            <div class="flow__box">RRHH</div>
+            <div class="flow__line"></div>
+          </div>
+          <div class="flow__spoke">
+            <div class="flow__box">Reportes</div>
+            <div class="flow__line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flow__detail">
+        <div class="flow__step">
+          <div class="flow__step-num">1</div>
+          <div><strong>Realizás una venta</strong> — se genera la factura, se descuenta el stock y se registra el cobro en caja automáticamente.</div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__step-num">2</div>
+          <div><strong>Registrás una compra</strong> — el stock sube, se registra la deuda con el proveedor y queda disponible el historial de pagos.</div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__step-num">3</div>
+          <div><strong>Abrís los reportes</strong> — encontrás todo ya consolidado: rentabilidad, stock, flujo de caja y evolución de ventas sin exportar ni cruzar datos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contacto">
+    <div class="container cta__inner">
+      <h2>Empezá hoy a gestionar tu PyME con claridad</h2>
+      <p>Ingresá a la plataforma y explorá todos los módulos. Sin instalaciones, sin compromisos.</p>
+      <div class="cta__actions">
+        <a href="https://nexopyme.vercel.app/" target="_blank" class="btn btn--solid btn--lg">Ingresar a NexoPyme</a>
+        <a href="mailto:ignalassalle22@gmail.com" class="btn btn--outline btn--lg">Contactar por correo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="nav__logo">Nexo<span>Pyme</span></span>
+        <p>Software de gestión integral para PyMEs argentinas.</p>
+      </div>
+      <div class="footer__links">
+        <div>
+          <h4>Plataforma</h4>
+          <a href="#modulos">Módulos</a>
+          <a href="https://nexopyme.vercel.app/" target="_blank">Acceder</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="#beneficios">Beneficios</a>
+          <a href="mailto:ignalassalle22@gmail.com">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 NexoPyme. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Intersection observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.module-card, .benefit, .flow__step, .problem__card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
