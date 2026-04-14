@@ -124,9 +124,9 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(16, 32, 64, 0.92);
+  background: rgba(10, 15, 30, 0.85);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav__inner {
@@ -145,11 +145,10 @@ body {
 .nav__logo span { color: var(--brand); }
 
 .nav__logo-img {
-  height: 34px;
+  height: 36px;
   width: auto;
   display: block;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 .nav__links {
@@ -230,12 +229,11 @@ body {
 }
 
 .hero__logo {
-  height: 80px;
+  height: 110px;
   width: auto;
   object-fit: contain;
   margin: 0 auto 32px;
   display: block;
-  filter: brightness(0) invert(1);
 }
 
 .hero__badge {
@@ -988,13 +986,11 @@ body {
   max-width: 300px;
 }
 .footer__logo {
-  height: 30px;
+  height: 32px;
   width: auto;
   object-fit: contain;
   display: block;
   margin-bottom: 14px;
-  filter: brightness(0) invert(1);
-  opacity: 0.85;
 }
 .footer__brand p {
   font-size: 0.88rem;
