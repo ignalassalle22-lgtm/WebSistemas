@@ -137,13 +137,19 @@ body {
 }
 
 .nav__logo {
-  font-size: 1.35rem;
-  font-weight: 800;
   text-decoration: none;
-  color: #fff;
-  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 .nav__logo span { color: var(--brand); }
+
+.nav__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 
 .nav__links {
   display: flex;
@@ -220,6 +226,15 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.hero__logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto 28px;
+  display: block;
+  filter: drop-shadow(0 4px 16px rgba(37, 99, 235, 0.3));
 }
 
 .hero__badge {
@@ -971,10 +986,13 @@ body {
 .footer__brand {
   max-width: 300px;
 }
-.footer__brand .nav__logo {
+.footer__logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
   display: block;
   margin-bottom: 12px;
-  font-size: 1.2rem;
+  opacity: 0.9;
 }
 .footer__brand p {
   font-size: 0.88rem;
