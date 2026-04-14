@@ -473,6 +473,94 @@ body {
   font-size: 0.8rem;
 }
 
+/* ── POS CARD ──────────────────────────────────────────── */
+.module-card--pos {
+  grid-column: 1 / -1;
+  background: linear-gradient(145deg, rgba(6, 182, 212, 0.08), rgba(37, 99, 235, 0.06));
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.pos-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.pos-card__header .module-card__icon { margin-bottom: 0; }
+
+.pos-card__badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 100px;
+  padding: 3px 10px;
+}
+
+.pos-card__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin: 20px 0 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.pos-card__col h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.pos-card__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pos-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.pos-benefit__icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pos-benefit strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.pos-benefit p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .pos-card__body { grid-template-columns: 1fr; gap: 20px; }
+  .pos-benefit { flex-direction: column; gap: 8px; }
+}
+
 /* ── BENEFITS ──────────────────────────────────────────── */
 .benefits {
   padding: 100px 0;
