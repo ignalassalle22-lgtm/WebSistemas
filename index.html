@@ -19,6 +19,7 @@
       <nav class="nav__links">
         <a href="#modulos">Módulos</a>
         <a href="#beneficios">Beneficios</a>
+        <a href="#costos">Costos</a>
         <a href="#contacto">Contacto</a>
         <a href="https://nexopyme.vercel.app/" target="_blank" class="btn btn--outline">Acceder</a>
       </nav>
@@ -29,6 +30,7 @@
     <div class="nav__mobile" id="mobileMenu">
       <a href="#modulos" onclick="toggleMenu()">Módulos</a>
       <a href="#beneficios" onclick="toggleMenu()">Beneficios</a>
+      <a href="#costos" onclick="toggleMenu()">Costos</a>
       <a href="#contacto" onclick="toggleMenu()">Contacto</a>
       <a href="https://nexopyme.vercel.app/" target="_blank" class="btn btn--solid">Acceder</a>
     </div>
@@ -43,8 +45,8 @@
         NexoPyme unifica stock, ventas, compras, pagos, cajas y punto de venta en una plataforma ágil y en tiempo real. Sin planillas, sin información dispersa, sin pérdida de tiempo.
       </p>
       <div class="hero__actions">
-        <a href="https://nexopyme.vercel.app/" target="_blank" class="btn btn--solid btn--lg">Probar gratis</a>
-        <a href="#modulos" class="btn btn--ghost btn--lg">Ver módulos</a>
+        <a href="#modulos" class="btn btn--solid btn--lg">Ver módulos</a>
+        <a href="#contacto" class="btn btn--ghost btn--lg">Contactar</a>
       </div>
       <div class="hero__stats">
         <div class="stat">
@@ -284,30 +286,12 @@
           <div class="flow__circle">Hub</div>
         </div>
         <div class="flow__spokes">
-          <div class="flow__spoke">
-            <div class="flow__box">Ventas</div>
-            <div class="flow__line"></div>
-          </div>
-          <div class="flow__spoke">
-            <div class="flow__box">Compras</div>
-            <div class="flow__line"></div>
-          </div>
-          <div class="flow__spoke">
-            <div class="flow__box">Inventario</div>
-            <div class="flow__line"></div>
-          </div>
-          <div class="flow__spoke">
-            <div class="flow__box">POS</div>
-            <div class="flow__line"></div>
-          </div>
-          <div class="flow__spoke">
-            <div class="flow__box">RRHH</div>
-            <div class="flow__line"></div>
-          </div>
-          <div class="flow__spoke">
-            <div class="flow__box">Reportes</div>
-            <div class="flow__line"></div>
-          </div>
+          <span class="flow__label">Ventas</span>
+          <span class="flow__label">Compras</span>
+          <span class="flow__label">Inventario</span>
+          <span class="flow__label">POS</span>
+          <span class="flow__label">RRHH</span>
+          <span class="flow__label">Reportes</span>
         </div>
       </div>
       <div class="flow__detail">
@@ -327,15 +311,96 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta" id="contacto">
-    <div class="container cta__inner">
-      <h2>Empezá hoy a gestionar tu PyME con claridad</h2>
-      <p>Ingresá a la plataforma y explorá todos los módulos. Sin instalaciones, sin compromisos.</p>
-      <div class="cta__actions">
-        <a href="https://nexopyme.vercel.app/" target="_blank" class="btn btn--solid btn--lg">Ingresar a NexoPyme</a>
-        <a href="mailto:ignalassalle22@gmail.com" class="btn btn--outline btn--lg">Contactar por correo</a>
+  <!-- COSTOS -->
+  <section class="pricing" id="costos">
+    <div class="container">
+      <div class="section-tag">Precio</div>
+      <h2 class="section-title">Un precio simple, sin sorpresas</h2>
+      <p class="section-sub">Todo incluido desde el primer día. Sin cargos por usuario, sin módulos bloqueados.</p>
+
+      <div class="pricing__wrapper">
+        <div class="pricing__card">
+          <div class="pricing__badge">Plan completo</div>
+          <div class="pricing__price">
+            <span class="pricing__currency">$</span>
+            <span class="pricing__amount">150.000</span>
+            <span class="pricing__period">/mes</span>
+          </div>
+          <p class="pricing__desc">Acceso total a la plataforma para toda tu empresa.</p>
+
+          <ul class="pricing__features">
+            <li><span class="pricing__check">✓</span> Usuarios ilimitados</li>
+            <li><span class="pricing__check">✓</span> Puntos de venta ilimitados</li>
+            <li><span class="pricing__check">✓</span> Acceso a todos los módulos</li>
+            <li><span class="pricing__check">✓</span> Hub, Ventas, Compras, Inventario, POS, Comercial, Logística, RRHH y Reportes</li>
+            <li><span class="pricing__check">✓</span> Facturación electrónica ARCA (AFIP)</li>
+            <li><span class="pricing__check">✓</span> Multi-moneda ARS / USD</li>
+            <li><span class="pricing__check">✓</span> IA integrada (lector de facturas, rutas, asistente comercial)</li>
+            <li><span class="pricing__check">✓</span> Actualizaciones y nuevas funciones incluidas</li>
+            <li><span class="pricing__check">✓</span> Soporte técnico dedicado</li>
+            <li><span class="pricing__check">✓</span> Datos en la nube, seguros y accesibles 24/7</li>
+            <li><span class="pricing__check">✓</span> Sin instalaciones ni hardware adicional</li>
+          </ul>
+
+          <a href="#contacto" class="btn btn--solid btn--lg pricing__cta">Consultar ahora</a>
+        </div>
+
+        <div class="pricing__aside">
+          <div class="pricing__aside-card">
+            <div class="pricing__aside-icon">💡</div>
+            <h4>¿Por qué vale la pena?</h4>
+            <p>Un sistema de gestión fragmentado puede costar 2 o 3 veces más si sumás planillas, distintos softwares y horas de trabajo manual. NexoPyme centraliza todo a una fracción del costo.</p>
+          </div>
+          <div class="pricing__aside-card">
+            <div class="pricing__aside-icon">🔄</div>
+            <h4>Sin contratos largos</h4>
+            <p>Suscripción mensual sin permanencia mínima. Podés comenzar cuando quieras y escalar a tu ritmo.</p>
+          </div>
+          <div class="pricing__aside-card">
+            <div class="pricing__aside-icon">🛠️</div>
+            <h4>Onboarding incluido</h4>
+            <p>Te acompañamos en la configuración inicial del sistema para que tu equipo empiece a operar desde el primer día.</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="container contact__inner">
+      <div class="contact__info">
+        <div class="section-tag">Contacto</div>
+        <h2 class="section-title">¿Querés saber más?</h2>
+        <p>Completá el formulario y nos ponemos en contacto con vos para contarte todo sobre NexoPyme y cómo puede ayudar a tu empresa.</p>
+        <div class="contact__details">
+          <a href="mailto:nexo.pyme.admin@gmail.com" class="contact__link">
+            <span class="contact__link-icon">✉</span>
+            nexo.pyme.admin@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contactForm" onsubmit="submitForm(event)">
+        <div class="form__group">
+          <label for="nombre">Nombre y apellido</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Juan García" required />
+        </div>
+        <div class="form__group">
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Mi PyME S.R.L." required />
+        </div>
+        <div class="form__group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+54 11 1234-5678" />
+        </div>
+        <div class="form__group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos en qué podemos ayudarte..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--solid btn--lg form__submit">Enviar consulta</button>
+        <p class="form__note" id="formNote"></p>
+      </form>
     </div>
   </section>
 
@@ -350,12 +415,13 @@
         <div>
           <h4>Plataforma</h4>
           <a href="#modulos">Módulos</a>
+          <a href="#costos">Costos</a>
           <a href="https://nexopyme.vercel.app/" target="_blank">Acceder</a>
         </div>
         <div>
           <h4>Empresa</h4>
           <a href="#beneficios">Beneficios</a>
-          <a href="mailto:ignalassalle22@gmail.com">Contacto</a>
+          <a href="mailto:nexo.pyme.admin@gmail.com">Contacto</a>
         </div>
       </div>
     </div>
@@ -368,6 +434,19 @@
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('open');
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      const nombre   = document.getElementById('nombre').value;
+      const empresa  = document.getElementById('empresa').value;
+      const telefono = document.getElementById('telefono').value;
+      const mensaje  = document.getElementById('mensaje').value;
+      const body = `Nombre: ${nombre}%0AEmpresa: ${empresa}%0ATelefono: ${telefono}%0A%0AMensaje:%0A${mensaje}`;
+      window.location.href = `mailto:nexo.pyme.admin@gmail.com?subject=Consulta NexoPyme - ${encodeURIComponent(empresa)}&body=${body}`;
+      const note = document.getElementById('formNote');
+      note.textContent = 'Se abrirá tu cliente de correo para enviar la consulta.';
+      note.style.color = '#4ade80';
     }
 
     // Smooth scroll for anchor links
